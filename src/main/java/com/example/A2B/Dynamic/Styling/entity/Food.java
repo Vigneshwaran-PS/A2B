@@ -17,5 +17,7 @@ public class Food {
     private String foodName;
     private String foodDescription;
     private float foodPrice;
+    private boolean nutFree;
+    private boolean jain;
 
 }

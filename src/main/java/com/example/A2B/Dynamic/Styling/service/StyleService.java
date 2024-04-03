@@ -18,4 +18,23 @@ public class StyleService {
     public void saveTheme(Style style) {
         repository.save(style);
     }
+
+    public void updateTheme(Style style) {
+        Style style1 = repository.findByProvince(style.getProvince());
+        style1.setAddress(style.getAddress());
+        style1.setState(style.getState());
+        style1.setRestaurantName(style.getRestaurantName());
+        style1.setUniversalBackgroundColor(style.getUniversalBackgroundColor());
+        style1.setUniversalFont(style.getUniversalFont());
+        style1.setUniversalTextColor(style.getUniversalTextColor());
+        style1.setBannerBackgroundColor(style.getBannerBackgroundColor());
+        style1.setBannerTextColor(style.getBannerTextColor());
+        style1.setMenuListSelectedBackGroundColor(style.getMenuListSelectedBackGroundColor());
+        style1.setMenuListSelectedTextColor(style.getMenuListSelectedTextColor());
+        style1.setViewButtonBackGroundColor(style.getViewButtonBackGroundColor());
+        style1.setViewButtonTextColor(style.getViewButtonTextColor());
+        style1.setFooterTextColor(style.getFooterTextColor());
+        style1.setFooterBackGroundColor(style.getFooterBackGroundColor());
+        repository.save(style1);
+    }
 }

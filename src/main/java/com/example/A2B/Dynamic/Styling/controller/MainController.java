@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/app.magilhub.com/restaurant")
+@CrossOrigin("*")
 public class MainController {
 
     @Autowired
@@ -28,6 +29,7 @@ public class MainController {
     private Food_And_Category_Service foodAndCategoryService;
 
     @Autowired
+
     private StyleService styleService;
 
 
@@ -69,7 +71,20 @@ public class MainController {
 
 
     @PostMapping
-    public void addNewTheme(@ModelAttribute Style style){
+    public void addNewTheme(@RequestBody Style style){
         styleService.saveTheme(style);
     }
+
+
+    @PatchMapping("/updateTheme")
+    public void updateTheme(@RequestBody Style style){
+        styleService.updateTheme(style);
+    }
+
+    @GetMapping("/getStyle/{province}")
+    public ResponseEntity<Style> getStyleByProvince(@PathVariable("province") String province){
+        Style style = styleService.getStyleByProvince(province);
+        return ResponseEntity.ok(style);
+    }
+
 }
