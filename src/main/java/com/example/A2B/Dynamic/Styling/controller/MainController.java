@@ -1,13 +1,13 @@
 package com.example.A2B.Dynamic.Styling.controller;
 
 import com.example.A2B.Dynamic.Styling.dto.CategoryAndFoodDTO;
-import com.example.A2B.Dynamic.Styling.response.StyleAndCategoryResponse;
 import com.example.A2B.Dynamic.Styling.entity.Category;
 import com.example.A2B.Dynamic.Styling.entity.Food;
 import com.example.A2B.Dynamic.Styling.entity.Food_And_Category;
 import com.example.A2B.Dynamic.Styling.entity.Style;
+import com.example.A2B.Dynamic.Styling.response.StyleAndCategoryResponse;
 import com.example.A2B.Dynamic.Styling.service.CategoryService;
-import com.example.A2B.Dynamic.Styling.service.Food_And_Category_Service;
+import com.example.A2B.Dynamic.Styling.service.FoodAndCategoryService;
 import com.example.A2B.Dynamic.Styling.service.StyleService;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,10 +26,9 @@ public class MainController {
     private CategoryService categoryService;
 
     @Autowired
-    private Food_And_Category_Service foodAndCategoryService;
+    private FoodAndCategoryService foodAndCategoryService;
 
     @Autowired
-
     private StyleService styleService;
 
 
