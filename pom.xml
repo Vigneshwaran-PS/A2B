@@ -12,11 +12,12 @@
 	<artifactId>A2B-Dynamic-Styling</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>A2B-Dynamic-Styling</name>
+	<packaging>war</packaging>
+	<url>http://maven.apache.org</url>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>21</java.version>
 	</properties>
-	<packaging>war</packaging>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
