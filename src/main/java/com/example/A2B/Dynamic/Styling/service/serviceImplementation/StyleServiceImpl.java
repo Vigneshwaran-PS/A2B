@@ -1,7 +1,7 @@
 package com.example.A2B.Dynamic.Styling.service.serviceImplementation;
 
+import com.example.A2B.Dynamic.Styling.dao.StyleDAO;
 import com.example.A2B.Dynamic.Styling.entity.Style;
-import com.example.A2B.Dynamic.Styling.repository.StyleRepository;
 import com.example.A2B.Dynamic.Styling.service.StyleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,17 +11,19 @@ public class StyleServiceImpl implements StyleService {
 
 
     @Autowired
-    private StyleRepository repository;
+    private StyleDAO styleDAO;
+
+
     public Style getStyleByProvince(String province) {
-        return repository.findByProvince(province);
+        return styleDAO.findByProvince(province);
     }
 
     public void saveTheme(Style style) {
-        repository.save(style);
+        styleDAO.save(style);
     }
 
     public void updateTheme(Style style) {
-        Style style1 = repository.findByProvince(style.getProvince());
+        Style style1 = styleDAO.findByProvince(style.getProvince());
         style1.setAddress(style.getAddress());
         style1.setState(style.getState());
         style1.setRestaurantName(style.getRestaurantName());
@@ -36,6 +38,6 @@ public class StyleServiceImpl implements StyleService {
         style1.setViewButtonTextColor(style.getViewButtonTextColor());
         style1.setFooterTextColor(style.getFooterTextColor());
         style1.setFooterBackGroundColor(style.getFooterBackGroundColor());
-        repository.save(style1);
+        styleDAO.save(style1);
     }
 }
